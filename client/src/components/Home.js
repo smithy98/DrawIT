@@ -6,13 +6,18 @@ function Home() {
   const history = useHistory();
 
   const startGame = () => history.push("/game");
+
   return (
     <Container
       className='d-flex flex-column justify-content-center align-items-center'
       style={{ width: "100vh", height: "100vh" }}
     >
       <h1 style={{ fontSize: 80 }}>DrawIT</h1>
-      <Button className='m-3' style={{ width: "10vh" }} onClick={startGame}>
+      <Button
+        className='m-3'
+        style={{ width: 100, height: 40 }}
+        onClick={startGame}
+      >
         Start
       </Button>
     </Container>
