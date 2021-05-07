@@ -5,7 +5,8 @@ import { useHistory } from "react-router-dom";
 function Home() {
   const history = useHistory();
 
-  const startGame = () => history.push("/game");
+  const startGame = () => history.push("/sandbox");
+  const startMultiplayerGame = () => history.push("/multiplayer");
 
   return (
     <Container
@@ -19,6 +20,13 @@ function Home() {
         onClick={startGame}
       >
         Sand-box
+      </Button>
+      <Button
+        className='m-3'
+        style={{ width: 200, height: 40 }}
+        onClick={startMultiplayerGame}
+      >
+        Play with Friends
       </Button>
     </Container>
   );
