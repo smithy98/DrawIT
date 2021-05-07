@@ -18,7 +18,7 @@ function Home() {
         style={{ width: 100, height: 40 }}
         onClick={startGame}
       >
-        Start
+        Sand-box
       </Button>
     </Container>
   );
