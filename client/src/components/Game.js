@@ -9,8 +9,8 @@ function Game() {
     setDrawing(d);
   };
 
-  const submitDrawing = () => {
-    // submit current drawing to server
+  const saveDrawing = () => {
+    // save current drawing to server
   };
 
   const discardDrawing = () => {
@@ -25,7 +25,7 @@ function Game() {
       <h1 className='m-3'>DrawIT</h1>
       <Canvas updateDrawing={updateDrawing} />
       <InputGroup className='btn btn-default'>
-        <Button onClick={submitDrawing}>Submit</Button>
+        <Button onClick={saveDrawing}>Submit</Button>
         <Button onClick={discardDrawing}>Discard</Button>
       </InputGroup>
     </Container>

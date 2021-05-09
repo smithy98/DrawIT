@@ -1,13 +1,14 @@
 import React from "react";
-import { Container } from "react-bootstrap";
-import Canvas from "./Canvas";
+import useLocalStorage from "../hooks/useLocalStorage";
+import MultiplayerGame from "./MultiplayerGame";
+import MultiplayerLobby from "./MultiplayerLobby";
 
 function Multiplayer() {
+  const [id, setId] = useLocalStorage("id");
   return (
-    <Container className='d-flex flex-column align-items-center'>
-      <h1>Hi</h1>
-      <Canvas></Canvas>
-    </Container>
+    <div>
+      {id ? <MultiplayerGame /> : <MultiplayerLobby onIdSubmit={setId} />}
+    </div>
   );
 }
 
