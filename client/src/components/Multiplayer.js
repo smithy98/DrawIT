@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import useLocalStorage from "../hooks/useLocalStorage";
 import MultiplayerGame from "./MultiplayerGame";
 import MultiplayerLobby from "./MultiplayerLobby";
 
 function Multiplayer() {
   const [id, setId] = useLocalStorage("id");
+  const [gameStarted, setGameStarted] = useState(false);
+
   return (
     <div>
-      {id ? <MultiplayerGame /> : <MultiplayerLobby onIdSubmit={setId} />}
+      {gameStarted ? (
+        <MultiplayerGame />
+      ) : (
+        <MultiplayerLobby
+          id={id}
+          onIdSubmit={setId}
+          setGameStarted={setGameStarted}
+        />
+      )}
     </div>
   );
 }
